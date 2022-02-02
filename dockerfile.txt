@@ -1,0 +1,14 @@
+from python:3.10.2-buster
+
+#Create directory to run the application
+
+WORKDIR /states_app
+
+#Install dependencies
+COPY requirements.txt .
+RUN pip install -r requirement.txt
+
+COPY 2code_usstates .
+
+#Running docker image
+CMD["python", "states.py"]
